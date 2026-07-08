@@ -1,0 +1,17 @@
+{
+  "architecture_state": "optimized_mvp",
+  "load_shedding_enabled": true,
+  "max_allowed_concurrency": 50000,
+  "traffic_classification": {
+    "checkout_and_billing_routes": {
+      "priority": "critical",
+      "rate_limit_per_minute": 100000,
+      "fallback_action": "queue_request"
+    },
+    "analytics_and_logs_routes": {
+      "priority": "low",
+      "rate_limit_per_minute": 5000,
+      "fallback_action": "drop_with_http_429"
+    }
+  }
+}
